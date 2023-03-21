@@ -4,21 +4,21 @@
 其他的校园网应该在更改登录部分的数据后也能使用
 
 
-# 使用方法
+## 使用方法
 
-## 使用Python运行
+### 使用Python运行
 ```py
 python AutoLogin.py
 ```
 
-## 打包成exe
+### 打包成exe
 
-### nuitka
+#### nuitka
 ```shell
 nuitka --standalone --mingw64 --disable-console --file-version=1.0 --product-version=1.0 --company-name="XuebingZhao" --product-name="Autologin" --enable-plugin=tk-inter --include-data-file=./AutoLogin.ico=./ --remove-output --output-dir=%USERPROFILE%/Desktop/nuikta-out --windows-icon-from-ico=AutoLogin.ico AutoLogin.py
 ```
 
-### pyintsaller
+#### pyintsaller
 ```shell
 pyinstaller -Fw -i AutoLogin.ico --clean --add-data=".\AutoLogin.ico;.\" AutoLogin.py
 ```
