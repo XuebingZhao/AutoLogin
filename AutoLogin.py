@@ -3,6 +3,7 @@ import requests
 import schedule
 import time
 import sys
+import os
 import tkinter as tk
 from tkinter import ttk
 from tkinter import messagebox as mbox
@@ -28,6 +29,12 @@ def get_host_ip():
         return ip
 
 
+def get_resource_path(relative_path):
+    if hasattr(sys, '_MEIPASS'):
+        return os.path.join(sys._MEIPASS, relative_path)
+    return os.path.join(os.path.abspath("."), relative_path)
+
+
 def get_np():
     """
     用户输入用户名和密码
@@ -36,7 +43,7 @@ def get_np():
     root = tk.Tk()
     root.title("校园网自动登录")
     root.tk.call('tk', 'scaling', ScaleFactor)      # 设置程序缩放
-    root.iconbitmap("./AutoLogin.ico")      # 设置窗口图标
+    root.iconbitmap(get_resource_path("./AutoLogin.ico"))      # 设置窗口图标
     root.resizable(0, 0)    # 禁止缩放
 
     label1 = ttk.Label(root, anchor='e', width=6, text="用户名:")

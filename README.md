@@ -15,10 +15,10 @@ python AutoLogin.py
 
 ### nuitka
 ```shell
-py -3 -m nuitka --standalone --mingw64 --disable-console --file-version=1.0 --product-version=1.0 --company-name="XuebingZhao" --product-name="Autologin" --enable-plugin=tk-inter --include-data-file=./AutoLogin.ico=./ --remove-output --output-dir=%USERPROFILE%/Desktop/nuikta-out --windows-icon-from-ico=AutoLogin.ico AutoLogin.py
+nuitka --standalone --mingw64 --disable-console --file-version=1.0 --product-version=1.0 --company-name="XuebingZhao" --product-name="Autologin" --enable-plugin=tk-inter --include-data-file=./AutoLogin.ico=./ --remove-output --output-dir=%USERPROFILE%/Desktop/nuikta-out --windows-icon-from-ico=AutoLogin.ico AutoLogin.py
 ```
 
 ### pyintsaller
 ```shell
-pyinstaller -Fw -i AutoLogin.ico --add-data="AutoLogin.ico;." AutoLogin.py
+pyinstaller -Fw -i AutoLogin.ico --clean --add-data=".\AutoLogin.ico;.\" AutoLogin.py
 ```
