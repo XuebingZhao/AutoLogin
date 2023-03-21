@@ -20,5 +20,5 @@ py -3 -m nuitka --standalone --mingw64 --disable-console --file-version=1.0 --pr
 
 ### pyintsaller
 ```shell
-pyinstaller -F -w -i AutoLogin.ico AutoLogin.py
+pyinstaller -Fw -i AutoLogin.ico --add-data="AutoLogin.ico;." AutoLogin.py
 ```
